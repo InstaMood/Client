@@ -18,20 +18,21 @@
         <link rel="stylesheet" href="./bootstrap-src/css/login-form.css">
     <title>InstaMood</title>
 </head>
-<body>
+<body class="container-fluid">
     <!--Landing Page-->
-    <section id="landing-page">
+
+    <section id="landing-page" class="flex-grow-1">
         <div style="height: 100vh">
             <div class="flex-center flex-column">
                 <img class="text-hide animated fadeIn mb-4" src="./bootstrap-src/img/logo.jpeg" alt="InstaMoodLogo">
               
-              <h5 class="animated fadeIn mb-3">Thank you for using our product. We're glad you're with us.</h5>
+              <h5 class="animated fadeIn mb-3">Thank you for using our features. We're glad you're with us.</h5>
               <p class="animated fadeIn text-muted">IM Team</p>
             </div>
           </div>
 
             <!--Register Page-->
-            <section class="example hoverable" style="width: 20%; position: relative; margin-top: -40%; margin-left: 70%; border-radius: 50px;">
+            <section class="example hoverable float-right" style="width: fit-content; margin-left: 70%; margin-right: 10%; margin-top: -40%; border-radius: 50px;">
                 <!-- Default form register -->
                     <form class="text-center border border-light p-5" style="border-radius: 50px;" action="#!">
 
@@ -47,7 +48,7 @@
                         </small>
 
                         <!-- Sign up button -->
-                        <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
+                        <button id="btn-reg" class="btn btn-info my-4 btn-block" type="submit">Register</button>
 
                         <!-- Terms of service -->
                         <p>By clicking
@@ -62,14 +63,13 @@
 
 
             <!-- Footer -->
-                <footer class="page-footer font-small blue fixed-bottom hoverable">
+                <footer class="page-footer font-small blue fixed-bottom example     hoverable">
 
                     <!-- Copyright -->
                     <div class="footer-copyright text-center py-3">Educational Purpose
-                    <a> Hacktiv8 Group Project</a>
+                    <a> Hacktiv8 Group Project 2020 MCC Batch-03</a>
                     </div>
                     <!-- Copyright -->
-                
                 </footer>
             <!-- Footer -->
 
@@ -111,7 +111,7 @@
                             <!-- Social login -->
                             <p>or sign in with:</p>
             
-                            <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+                            <a href="#" class="mx-2" role="button"><i class="fab fa-google light-blue-text"></i></a>
             
                         </form>
                         <!-- Default form login -->
@@ -122,24 +122,129 @@
     
     
     <!--User's Dashboard / user's wall-->
-    <section id="user-wall">
+    <section id="user-wall" class="" style="margin-top: 10%;">
+
+        <!--TOP NAVBAR-->
+        <!--Navbar -->
+            <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color fixed-top">
+                <a class="navbar-brand" href="#" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">INSTAMood</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+                aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> Profile </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item" href="#">My account</a>
+                        <a class="dropdown-item" href="#">Log out</a>
+                    </div>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+      <!--/.Navbar -->
 
         <!--Upload Page-->
-        <form class="md-form">
-            <div class="file-field">
-            <div class="btn btn-primary btn-sm float-left">
-                <span>Choose file</span>
-                <input type="file">
+
+        <div class="d-flex justify-content-center">
+            <div id="list-content" style="width: 20%; margin-left: 30%; margin-right: 10%;">
+    
+                <div class="card card-cascade wider hoverable">
+    
+                    <!-- Card image -->
+                    <div class="view view-cascade overlay">
+                      <img class="card-img-top" src="https://www.telegraph.co.uk/content/dam/science/2016/11/25/unnamed-1_trans_NvBQzQNjv4Bqybq3X5BAB1RSSGsuKZq_lIzlPrhHwTt322ypFFb6um8.jpg?imwidth=1400" alt="Card image cap">
+                      <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center">
+                  
+                      <!-- Title -->
+                      <h4 class="card-title"><strong>"JOYFUL FACE"</strong></h4>
+                      <!-- Subtitle -->
+                      <h5 class="blue-text pb-2"><strong><em>FIND A GOOD FOOD!</em></strong></h5>
+                      <!-- Text -->
+                      <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam. </p>
+                  
+                  
+                    </div>
+                  
+                  </div>
+                  <!-- Card Wider -->
+                  
             </div>
-            <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" placeholder="Upload your file">
+    
+            <div class="rounded mb-0 profile-container position-sticky" style="width: 20%; margin-right: 10%;">
+                <div class="card card-cascade wider hoverable">
+    
+                    <!-- Card image -->
+                    <div class="view view-cascade overlay">
+                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+                      <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center">
+                  
+                      <!-- Title -->
+                      <h4 class="card-title"><strong>Alison Belmont</strong></h4>
+                      <!-- Subtitle -->
+                      <h5 class="blue-text pb-2"><strong>Graffiti Artist</strong></h5>
+                      <!-- Text -->
+                      <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam. </p>
+                  
+                      <!-- Linkedin -->
+                      <a class="px-2 fa-lg li-ic hoverable"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                  
+                      <div style="width: fit-content; padding-top: 30px;">
+                          <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="upload-photo">Upload</span>
+                              </div>
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                  aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
             </div>
-            </div>
-        </form>
+        </div>
+
+
     </section>
 
 
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            const g_idToken = googleUser.getAuthResponse().id_token;
+
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            console.log('Access Token: ' + g_idToken);
+            
+        }
+    </script>
 
 
 
@@ -151,8 +256,6 @@
     <script type="text/javascript" src="./bootstrap-src/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="./bootstrap-src/js/mdb.min.js"></script>
-    <!-- Your custom scripts (optional) -->
-    <script type="text/javascript" src="./main.js"></script>
 
 </body>
 </html>
