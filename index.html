@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- MDB icon -->
+        <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="./bootstrap-src/css/bootstrap.min.css">
+        <!-- Material Design Bootstrap -->
+        <link rel="stylesheet" href="./bootstrap-src/css/mdb.min.css">
+        <!-- Your custom styles (optional) -->
+        <link rel="stylesheet" href="./bootstrap-src/css/style.css">
+        <link rel="stylesheet" href="./bootstrap-src/css/login-form.css">
+    <title>InstaMood</title>
+</head>
+<body>
+    <!--Landing Page-->
+    <section id="landing-page">
+        <div style="height: 100vh">
+            <div class="flex-center flex-column">
+              <h1 class="text-hide animated fadeIn mb-4" style="background-image: url('https://imgur.com/lgwy0Du'); width: 250px; height: 90px;">InstaMood</h1>
+              <h5 class="animated fadeIn mb-3">Thank you for using our product. We're glad you're with us.</h5>
+              <p class="animated fadeIn text-muted">IM Team</p>
+            </div>
+          </div>
+
+            <!--Register Page-->
+            <section class="example hoverable" style="width: 20%; position: relative; margin-top: -40%; margin-left: 70%;">
+                <!-- Default form register -->
+                    <form class="text-center border border-light p-5" action="#!">
+
+                        <p class="h4 mb-4">Register</p>
+
+                        <!-- E-mail -->
+                        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+                        <!-- Password -->
+                        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                            At least 8 characters and 1 digit
+                        </small>
+
+                        <!-- Sign up button -->
+                        <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
+
+                        <!-- Terms of service -->
+                        <p>By clicking
+                            <em>Sign up</em> you agree to our
+                            <a href="" target="_blank">terms of service</a>
+                        
+                        <p>Have an account? <a id="btn-login-modal" href="" class="btn btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"> Login </a></p>
+
+                    </form>
+                <!-- Default form register -->
+            </section>
+    </section>
+
+
+    <!--Login Page-->
+    <section class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true example hoverable" style="width: 20%; margin-left: 40%;">
+        <!-- Default form login -->
+            <form class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="login-form">
+                            <p class="h4 mb-4">Sign in</p>
+            
+                            <!-- Email -->
+                            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+            
+                            <!-- Password -->
+                            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+            
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <!-- Remember me -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                        <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- Forgot password -->
+                                    <a href="">Forgot password?</a>
+                                </div>
+                            </div>
+            
+                            <!-- Sign in button -->
+                            <button id="btn-login" class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+                            <!-- Social login -->
+                            <p>or sign in with:</p>
+            
+                            <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+            
+                        </form>
+                        <!-- Default form login -->
+                    </div>
+                </div>
+    </section>
+
+    
+    
+    <!--User's Dashboard / user's wall-->
+    <section id="user-wall">
+
+        <!--Upload Page-->
+        <!-- <form class="md-form">
+            <div class="file-field">
+            <div class="btn btn-primary btn-sm float-left">
+                <span>Choose file</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload your file">
+            </div>
+            </div>
+        </form> -->
+    </section>
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="./bootstrap-src/js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="./bootstrap-src/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="./bootstrap-src/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="./bootstrap-src/js/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript"></script>
+
+</body>
+</html>
