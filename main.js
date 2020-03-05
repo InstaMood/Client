@@ -1,8 +1,5 @@
 const access_token = localStorage.getItem('access_token')
 
-// const access_token = 'jaiwubdiauw9y12u3hhiaudbaubu1'
-// localStorage.setItem('access_token', access_token)
-
 $(document).ready(function(){
     // localStorage.setItem(access_token)
 
@@ -21,8 +18,6 @@ $(document).ready(function(){
     $('#btn-reg').on('click', function(e){
         e.preventDefault()
 
-        $('#btn-reg').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
-
         const email = $('#defaultRegisterFormEmail').val()
         const password = $('#defaultRegisterFormPassword').val() 
 
@@ -36,6 +31,18 @@ $(document).ready(function(){
         })
         .done(function(response){
             console.log(response);
+            $('#info-message').append(`
+            <div class="alert alert-success" role="alert">
+                Your account has been successfully created!. You can now <b>login</b>.
+            </div>
+            `)
+            
+            $(".alert").fadeTo(2000, 2000).slideUp(500, function(){
+                $(".alert").alert('close');
+            });
+
+            $('#user-wall').hide()
+            $('#landing-page').show()
             
         })
         .fail(function(error){
