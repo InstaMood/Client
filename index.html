@@ -16,6 +16,7 @@
         <!-- Your custom styles (optional) -->
         <link rel="stylesheet" href="./bootstrap-src/css/style.css">
         <link rel="stylesheet" href="./bootstrap-src/css/login-form.css">
+        <meta name="google-signin-client_id" content="864099691243-oci21m12hsos8751ccamad7rpt34sbg8.apps.googleusercontent.com">
     <title>InstaMood</title>
 </head>
 <body>
@@ -113,7 +114,8 @@
 
                             <!-- Social login -->
                             <p>or sign in with:</p>
-            
+                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
                             <a href="#" class="mx-2" role="button"><i class="fab fa-google light-blue-text"></i></a>
             
                         </form>
@@ -123,9 +125,8 @@
     </section>
 
     
-    
     <!--User's Dashboard / user's wall-->
-    <section id="user-wall" class="" style="margin-top: 10%;">
+    <section id="user-wall" class="" style="margin-top: 7%;">
 
         <!--TOP NAVBAR-->
         <!--Navbar -->
@@ -143,89 +144,66 @@
                         <i class="fas fa-user"></i> Profile </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                         <a class="dropdown-item" href="#">My account</a>
-                        <a class="dropdown-item" href="#">Log out</a>
+                        <a id="btn-logout" class="dropdown-item" href="#">Log out</a>
                     </div>
                     </li>
                 </ul>
                 </div>
             </nav>
       <!--/.Navbar -->
-
-        <!--Upload Page-->
-
-        <div class="d-flex justify-content-center">
-            <div id="list-content" style="width: 20%; margin-left: 30%; margin-right: 10%;">
-    
-                <div class="card card-cascade wider hoverable">
-    
-                    <!-- Card image -->
-                    <div class="view view-cascade overlay">
-                      <img class="card-img-top" src="https://www.telegraph.co.uk/content/dam/science/2016/11/25/unnamed-1_trans_NvBQzQNjv4Bqybq3X5BAB1RSSGsuKZq_lIzlPrhHwTt322ypFFb6um8.jpg?imwidth=1400" alt="Card image cap">
-                      <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                      </a>
-                    </div>
-                  
-                    <!-- Card content -->
-                    <div class="card-body card-body-cascade text-center">
-                  
-                      <!-- Title -->
-                      <h4 class="card-title"><strong>"JOYFUL FACE"</strong></h4>
-                      <!-- Subtitle -->
-                      <h5 class="blue-text pb-2"><strong><em>FIND A GOOD FOOD!</em></strong></h5>
-                      <!-- Text -->
-                      <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam. </p>
-                  
-                  
-                    </div>
-                  
-                  </div>
-                  <!-- Card Wider -->
-                  
-            </div>
-    
-            <div class="rounded mb-0 profile-container position-sticky" style="width: 20%; margin-right: 10%;">
-                <div class="card card-cascade wider hoverable">
-    
-                    <!-- Card image -->
-                    <div class="view view-cascade overlay">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
-                      <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                      </a>
-                    </div>
-                  
-                    <!-- Card content -->
-                    <div class="card-body card-body-cascade text-center">
-                  
-                      <!-- Title -->
-                      <h4 class="card-title"><strong>Alison Belmont</strong></h4>
-                      <!-- Subtitle -->
-                      <h5 class="blue-text pb-2"><strong>Graffiti Artist</strong></h5>
-                      <!-- Text -->
-                      <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam. </p>
-                  
-                      <!-- Logout -->
-                      <a id="btn-logout" class="btn btn-primary hoverable"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                  
-                      <div style="width: fit-content; padding-top: 30px;">
-                          <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" id="upload-photo">Upload</span>
-                              </div>
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                  aria-describedby="inputGroupFileAddon01">
-                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                              </div>
+        <div class="row" style="top: 0px;">
+            <div class="col-12 col-md-8">
+                <div id="photo-container">
+                    <div class="row mb-5">
+                        <div class="card mx-auto hoverable" style="width: 40rem;">
+                            <h3 class="card-title">Username</h3>
+                            <img class="card-img" src="">
+                            <div class="card-body">
+                                <h5 class="card-title"> Description</h5>
+                                <p class="card-text">lorem ipsum dolon si amet</p>
                             </div>
-                      </div>
+                            <button type="button" class="btn btn-link">button</button>
+                        </div>
                     </div>
+                    <div class="row mb-5">
+                        <div class="card mx-auto hoverable" style="width: 40rem;">
+                            <h3 class="card-title">Username</h3>
+                            <img class="card-img" src="">
+                            <div class="card-body">
+                                <h5 class="card-title"> Description</h5>
+                                <p class="card-text">lorem ipsum dolon si amet</p>
+                            </div>
+                            <button type="button" class="btn btn-link">button</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="form-container">
+                    <div class="row mb-5">
+                        <div class="card mx-auto"  style="width: 40rem;">
+                            <form method="POST" id="upload" action="/test" enctype="multipart/form-data">
+                                <input type="file" name="upload" /><br /><br />
+                                <button type="submit" name="upload">Upload</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="sidebar" class="col-6 col-md-4 fixed-right" style="position:fixed; right: 0;">
+                
+                <div class="card" style="width: 18rem; margin:auto;">
+                    <h3 class="card-title">Profile</h3>
+                    <img class="card-img" src="">
+                    <div class="card-body">
+                        <h5 class="card-title"> Name</h5>
+                        <p class="card-text">lorem ipsum dolon si amet</p>
+                    </div>
+                    <button type="button" class="btn btn-link">Upload My Photos</button>
+                    <button type="button" class="btn btn-link">Show My Photos</button>
+                    <button type="button" class="btn btn-link">Discover</button>
+                </div>
             </div>
         </div>
-
 
     </section>
 
@@ -233,20 +211,41 @@
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="src/ProfileCard.js"></script>
+    <script src="src/PhotoCard.js"></script>
+    <script src="src/showUploadForm.js"></script>
+    <script src="src/myProfileCard.js"></script>
+    <script src="src/myPhoto.js"></script>
+    <script src="src/load.js"></script>
+    <script src="src/elements.js"></script>
     <script src="main.js"></script>
 
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
             const g_idToken = googleUser.getAuthResponse().id_token;
-
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            console.log('Access Token: ' + g_idToken);
+            // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            // console.log('Name: ' + profile.getName());
+            // console.log('Image URL: ' + profile.getImageUrl());
+            // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            // console.log('Access Token: ' + g_idToken);
+            $.ajax({
+                    method: 'GET',
+                    url: 'http://localhost:3000/loginGoogle',
+                    headers: {
+                        'token': g_idToken
+                    }
+                })
+                .done(function(response){
+                    localStorage.setItem('access_token', response)
+                    loadLoginPage()
+                })
+                .fail(function(error){
+                    console.log(error);
+                })    
             
         }
+        
     </script>
 
 

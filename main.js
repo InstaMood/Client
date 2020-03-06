@@ -1,4 +1,4 @@
-const access_token = localStorage.getItem('access_token')
+let access_token = localStorage.getItem('access_token')
 
 $(document).ready(function(){
     // localStorage.setItem(access_token)
@@ -6,7 +6,8 @@ $(document).ready(function(){
     if(access_token){
         $('#landing-page').hide()
         $('#user-wall').show()
-
+        console.log("login");
+        loadLoginPage()
         //Fetch user's feed
 
     }else{
@@ -30,7 +31,7 @@ $(document).ready(function(){
                 }
         })
         .done(function(response){
-            console.log(response);
+            // console.log(response);
             $('#info-message').append(`
             <div class="alert alert-success" role="alert">
                 Your account has been successfully created!. You can now <b>login</b>.
@@ -47,7 +48,6 @@ $(document).ready(function(){
         })
         .fail(function(error){
             console.log(error);
-            
         })
     })
 
@@ -57,7 +57,7 @@ $(document).ready(function(){
         
         const email = $('#defaultLoginFormEmail').val()
         const password = $('#defaultLoginFormPassword').val()
-
+        console.log("login");
         $.ajax({
             method: 'POST',
             url: 'http://localhost:3000/login',
@@ -67,16 +67,13 @@ $(document).ready(function(){
             }
         })
         .done(function(response){
-            localStorage.setItem('access_token', response.access_token)
-            
-            // setTimeout(() => {
-                //checkpoint
-            $('#login-form-master').modal(false)
-            $('#login-form-master').hide()
-            // }, 200)
+            localStorage.setItem('access_token', response)
+            console.log(response, "token user here")
 
             $('#user-wall').show()
             $('#landing-page').hide()
+            $('#modalLoginForm').modal('hide')
+            loadLoginPage()
         })
         .fail(function(error){
             console.log(error);
@@ -89,6 +86,10 @@ $(document).ready(function(){
         localStorage.removeItem('access_token')
         $('#landing-page').show()
         $('#user-wall').hide()
+        var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
     })
 
     $('#upload-photo').on('click', function(e){
