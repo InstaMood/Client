@@ -68,12 +68,6 @@ $(document).ready(function(){
         })
         .done(function(response){
             localStorage.setItem('access_token', response.access_token)
-            
-            // setTimeout(() => {
-                //checkpoint
-            $('#login-form-master').modal(false)
-            $('#login-form-master').hide()
-            // }, 200)
 
             $('#user-wall').show()
             $('#landing-page').hide()
@@ -89,6 +83,12 @@ $(document).ready(function(){
         localStorage.removeItem('access_token')
         $('#landing-page').show()
         $('#user-wall').hide()
+
+        var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+
     })
 
     $('#upload-photo').on('click', function(e){
