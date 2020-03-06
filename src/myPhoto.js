@@ -3,7 +3,7 @@ function loadMyPhotos() {
     $('.photo-item').hide()
     console.log("photo yeh2", access_token)
     $.ajax({
-        url: "http://localhost:3000/photo/user",
+        url: "http://localhost:3000/photo/",
         method: "GET",
         headers: {
             access_token: access_token
@@ -13,12 +13,17 @@ function loadMyPhotos() {
         // console.log(response);
         //array of photo
         $('#photo-container').empty()
-        if (response.data.length > 0) {
-            response.data.forEach(item => {
+        // console.log(response);
+        if (response) {
+            
+            response.forEach(item => {
                 let Item = PhotoCard.create(item)
-                $('#container-posts').append(Item.cardContent);
+                console.log(Item.cardContent);
+                
+                $('#photo-container').append(Item.cardContent);
             })
             showPhoto()
+            showUpload()
         } else {
             showUpload()
             //show upload form

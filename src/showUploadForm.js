@@ -1,10 +1,10 @@
 function showPhoto() {
     $('#photo-container').show()
-    $('#form-container').hide()
+    // $('#form-container').hide()
 }
 
 function showUpload() {
-    $('#photo-container').hide()
+    // $('#photo-container').hide()
     $('#form-container').show()
 }
 
