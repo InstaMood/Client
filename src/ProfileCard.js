@@ -1,10 +1,9 @@
 class ProfileCard {
     constructor(user) {
-        this.id = user.id;
+        this._token = user.token;
         this.email = user.email;
         this.name = this.emailHead(user.email);
         this.avaURL = this.avaURL(user.photo_url);
-        this._token = user.token;
     }
     emailHead(emailStr) {
         let name   = emailStr.substring(0, emailStr.lastIndexOf("@"));

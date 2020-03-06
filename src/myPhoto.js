@@ -1,24 +1,30 @@
 function loadMyPhotos() {
+    access_token = localStorage.getItem('access_token');
+    $('.photo-item').hide()
+    console.log("photo yeh2", access_token)
     $.ajax({
-        url: "http://localhost:3000/photo",
+        url: "http://localhost:3000/photo/user",
         method: "GET",
         headers: {
-            token: localStorage.token
+            access_token: access_token
         }
     })
     .done(response => {
         // console.log(response);
         //array of photo
-        $('.photo-item').remove()
-        response.data.forEach(item => {
-            let Item = PhotoCard.create(item)
-            $('#container-posts').append(Item.cardContent);
-        })
+        $('#photo-container').empty()
+        if (response.data.length > 0) {
+            response.data.forEach(item => {
+                let Item = PhotoCard.create(item)
+                $('#container-posts').append(Item.cardContent);
+            })
+            showPhoto()
+        } else {
+            showUpload()
+            //show upload form
+        }
     })
     .fail(response => {
         console.log(response)
-    })
-    .always(() => {
-        console.log("always");
     })
 }
