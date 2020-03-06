@@ -2,7 +2,7 @@ $('#form-container').on('submit', (event) => {
     // console.log(event);
     event.preventDefault();
     access_token = localStorage.getItem('access_token');
-    let form = $('#uploadForm')[0];
+    let form = $('#upload')[0];
     let data = new FormData(form);
     $.ajax({
         type: "POST",
@@ -13,7 +13,10 @@ $('#form-container').on('submit', (event) => {
         processData: false,
         contentType: false
     })
-    .done(
+    .done(() =>{
         loadMyPhotos()
-    )
+    })
+    .always(() =>{
+        loadMyPhotos()
+    })
 })
