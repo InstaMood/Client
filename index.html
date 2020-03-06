@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="./bootstrap-src/css/login-form.css">
     <title>InstaMood</title>
 </head>
-<body class="container-fluid">
+<body>
     <!--Landing Page-->
 
     <section id="landing-page" class="flex-grow-1">
@@ -32,7 +32,7 @@
           </div>
 
             <!--Register Page-->
-            <section class="example hoverable float-right" style="width: fit-content; margin-left: 70%; margin-right: 10%; margin-top: -40%; border-radius: 50px;">
+            <section class="example hoverable float-right" style=" width: fit-content; margin-left: 70%; margin-right: 10%; margin-top: -40%; border-radius: 50px;">
                 <!-- Default form register -->
                     <form class="text-center border border-light p-5" style="border-radius: 50px;" action="#!">
 
@@ -62,7 +62,7 @@
             </section>
 
             <div id="info-message" class="animated slideInDown fixed-top">
-
+                <!--Generated from js file depends on what the results is-->
             </div>
 
             <!-- Footer -->
@@ -81,9 +81,9 @@
 
     <!--Login Page-->
     <section class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true example hoverable" style="width: 20%; margin-left: 40%;">
+    aria-hidden="true" style="width: 20%; margin-left: 40%; height: 60%;">
         <!-- Default form login -->
-            <form class="modal-dialog" role="document">
+            <form id='login-form-master' class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="login-form">
                             <p class="h4 mb-4">Sign in</p>
@@ -207,8 +207,8 @@
                       <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
                         laudantium, totam rem aperiam. </p>
                   
-                      <!-- Linkedin -->
-                      <a class="px-2 fa-lg li-ic hoverable"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                      <!-- Logout -->
+                      <a id="btn-logout" class="btn btn-primary hoverable"><i class="fas fa-sign-out-alt"></i> Logout</a>
                   
                       <div style="width: fit-content; padding-top: 30px;">
                           <div class="input-group">

@@ -67,9 +67,14 @@ $(document).ready(function(){
             }
         })
         .done(function(response){
-
             localStorage.setItem('access_token', response.access_token)
-            //show hide page
+            
+            // setTimeout(() => {
+                //checkpoint
+            $('#login-form-master').modal(false)
+            $('#login-form-master').hide()
+            // }, 200)
+
             $('#user-wall').show()
             $('#landing-page').hide()
         })
@@ -77,6 +82,13 @@ $(document).ready(function(){
             console.log(error);
             
         })    
+    })
+
+    $('#btn-logout').on('click', function(e){
+        e.preventDefault()
+        localStorage.removeItem('access_token')
+        $('#landing-page').show()
+        $('#user-wall').hide()
     })
 
     $('#upload-photo').on('click', function(e){
