@@ -151,9 +151,8 @@
                 </div>
             </nav>
       <!--/.Navbar -->
-
         <div class="row" style="top: 0px;">
-            <div class="col-12 col-md-8">
+            <div id="container-posts" class="col-12 col-md-8">
                 <div class="row mb-5">
                     <div class="card mx-auto hoverable" style="width: 40rem;">
                         <h3 class="card-title">Username</h3>
@@ -185,9 +184,18 @@
                             <p class="card-text">lorem ipsum dolon si amet</p>
                         </div>
                         <button type="button" class="btn btn-link">button</button>
+                    </div>
+                </div>
+                <div class="row mb-5" id="upload-form">
+                    <div class="card mx-auto"  style="width: 40rem;">
+                        <form method="POST" action="/test" enctype="multipart/form-data">
+                            <input type="file" name="upload" /><br /><br />
+                            <button type="submit" name="upload">Upload</button>
+                        </form>
                     </div>
                 </div>
             </div>
+            
             <div id="sidebar" class="col-6 col-md-4 fixed-right" style="position:fixed; right: 0;">
                 
                 <div class="card" style="width: 18rem; margin:auto;">
@@ -203,7 +211,6 @@
                 </div>
             </div>
         </div>
-        
 
     </section>
 
