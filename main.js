@@ -73,6 +73,7 @@ $(document).ready(function(){
             $('#user-wall').show()
             $('#landing-page').hide()
             $('#modalLoginForm').modal('hide')
+            loadLoginPage()
         })
         .fail(function(error){
             console.log(error);
