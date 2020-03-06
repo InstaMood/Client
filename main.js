@@ -6,7 +6,7 @@ $(document).ready(function(){
     if(access_token){
         $('#landing-page').hide()
         $('#user-wall').show()
-        console.log("login");
+        // console.log("login");
         loadLoginPage()
         //Fetch user's feed
 
@@ -90,13 +90,6 @@ $(document).ready(function(){
             auth2.signOut().then(function () {
             console.log('User signed out.');
         });
-    })
-
-    $('#upload-photo').on('click', function(e){
-        e.preventDefault()
-
-
-
     })
 
 
